@@ -26,9 +26,14 @@ function onTextareaInput() {
 
 function submitForm(event) {
     event.preventDefault();
-    event.currentTarget.reset();
     localStorage.removeItem(STOREGE_KEY);
+    
+    if (email.value === "" || message.value === "") {
+    return alert("Please fill in all the fields!");
+  }
     console.log(state);
+     email.value = '';
+     message.value = '';
 } 
 
 function updateFormState(){
